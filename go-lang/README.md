@@ -5,6 +5,7 @@ summary for the course
 ## Course Resources
 - Course Outline: https://docs.google.com/document/d/1ckYpi6hcRkaBUEk975f54oGsHYHu7GhzOk7-nOrkNxo/edit 
 - OldCourseOutline: https://goo.gl/qwoSft
+- Go lang bridge forum: https://forum.golangbridge.org/
 - Presentaion: https://goo.gl/Tbz6Xf
 - Lecture Github(저희 의 Code sample):https://goo.gl/KbUroF
 - YouTube: https://www.youtube.com/user/toddmcleod
@@ -82,4 +83,4 @@ summary for the course
 - type assertion
 
 
-# Q. about type, shot declaration, custom type, conversion, package, import
+# Q. about type, shot declaration, custom type, conversion, package, import, underlying type
