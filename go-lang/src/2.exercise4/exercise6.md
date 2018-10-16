@@ -7,7 +7,8 @@
 ### what is idiomatic go code
 ### _ "throw away returns", "send returns ito the void"
 
-### Variadic parameter: When you see that a func has a parameter of this type "...interface{}" this is called a "variadic parameter" and it means that the func can take as many values of that type as you want to pass in
+### Variadic parameter
+  When you see that a func has a parameter of this type "...interface{}" this is called a "variadic parameter" and it means that the func can take as many values of that type as you want to pass in
 
 ### interface{}
 
