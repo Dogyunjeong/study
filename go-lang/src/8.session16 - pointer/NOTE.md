@@ -54,8 +54,10 @@ func foo(y *int) {  // param y is passed by value.  value of y is same as an add
 ```
 
 ## Methods set [#](https://golang.org/ref/spec#Method_sets)
-  Method sets determine what methods attah to a TYPE. it is exactly
+  Method sets determine what methods attach to a TYPE. it is exactly
 We can attach methods to a type. Those methods attached to a type are known as a method set.
+
+The method set of a type **determines the interfaces that the type implements** and the methods that can be....
 
 [play ground](https://play.golang.org/p/pWFxsg6MSe)
 ```
@@ -81,6 +83,17 @@ func main() {
 }
 
 ```
+
+- NON-POINTER RECEIVER & NON-POINTER VALUE
+  https://play.golang.org/p/2ZU0QX12a8
+- NON-POINTER RECEIVER & POINTER VALUE
+  https://play.golang.org/p/glWZmm0gY6 
+- POINTER RECEIVER & POINTER VALUE
+  https://play.golang.org/p/pWFxsg6MSe 
+- POINTER RECEIVER & NON-POINTER VALUE
+  https://play.golang.org/p/G3lEy-4Mc8 ( code does not run )
+- this codes does run - notice the difference -  method set determines the INTERFACES that the type implements
+  **Important:**  https://play.golang.org/p/KK8gjsAWBZ 
 
 ### Pointer & Non-Pointer receiver
 Non-pointer receiver can receive pointers and non-pointers. But Pointer receiver can receive only pointer.

@@ -84,3 +84,9 @@ summary for the course
 
 
 # Q. about type, shot declaration, custom type, conversion, package, import, underlying type
+
+
+# Recommended Course
+
+- Go training: https://www.ardanlabs.com/ultimate-go/
+

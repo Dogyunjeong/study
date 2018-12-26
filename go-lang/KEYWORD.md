@@ -26,7 +26,7 @@ efficient execution
   - ascii
   - UTF-8
 - 1 portch light = 2 messages (On or Off)
-- first computer: ENIAC 
+- first computer: ENIAC
 
 
 ## Computer
