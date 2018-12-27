@@ -6,16 +6,19 @@ Go is first programming language, natively take advantage of multiple cores
 Vidoe: Concurrency is not parlleism: [#](https://www.youtube.com/watch?v=cN_DpYBzKso)
 
 
-### Concurrency 
+## Concurrency  [#](https://golang.org/doc/effective_go.html#concurrency)
 
 Design pattern, way to code
 
-### Parallelism
+Concurrent programming in many environments is made difficult by the subtleties required to implement correct access to shared variables.
 
-For multiple cores
+In computer science, concurrency refers to the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome. This allows for parallel execution of the concurrent units, which can significantly improve overall speed of the execution in multi-processor and multi-core systems. In more technical terms, concurrency refers to the decomposability property of a program, algorithm, or problem into order-independent or partially-ordered components or units [wikipedia](https://en.wikipedia.org/wiki/Concurrency_(computer_science))
+
+### Concurrency vs Parallelism
+concurrency is the composition of independently executing processes, while parallelism is the simultaneous execution of (possibly related) computations [concurrency-is-not-parallelism](https://blog.golang.org/concurrency-is-not-parallelism)
 
 
-## Writing Concurrent code
+### Writing Concurrent code
 
 Primitive concurrent code
 
@@ -34,16 +37,6 @@ func foo() {
 func bar() { ... }
 ```
 
-## runtime package
-```
-	fmt.Println("OS\t\t", runtime.GOOS)
-	fmt.Println("ARCH\t\t", runtime.GOARCH)
-	fmt.Println("CPUs\t\t", runtime.NumCPU())
-	fmt.Println("Goroutines\t\t", runtime.NumGoroutine())
-```
-### func init() {}
-It will setup something before run main()
-
 ### go func()
 It will launch a go routine
 Can use to `function` or `method`. but some built-in function are restricted
@@ -60,11 +53,9 @@ func bar() { ... }
 ```
 
 - main routine is one of go routine
+- Muex [#](https://godoc.org/sync#Mutex)
+- WaitGroup [#](https://godoc.org/sync#WaitGroup)
 
-
-Muex [#](https://godoc.org/sync#Mutex)
-
-WaitGroup [#](https://godoc.org/sync#WaitGroup)
 
 ## Method sets revisited [#](https://golang.org/ref/spec#Method_sets)
 The method set of a type **determines the interfaces that the type implements** and the methods that can be....
@@ -94,20 +85,7 @@ func main() {
 }
 ```
 
-## Concurrency [#](https://golang.org/doc/effective_go.html#concurrency)
-Concurrent programming in many environments is made difficult by the subtleties required to implement correct access to shared variables.
-
-Data race cannot happen in go
-- race condition
-
-```
-	fmt.Println("OS\t\t", runtime.GOOS)
-	fmt.Println("ARCH\t\t", runtime.GOARCH)
-	fmt.Println("CPUs\t\t", runtime.NumCPU())
-	fmt.Println("Goroutines\t\t", runtime.NumGoroutine())
-```
-
-### Mutiplexed
+## Mutiplexed
 
 ## Race Condition
 
@@ -130,12 +108,6 @@ When a light has two switches, two people turn on and off at each switches [#](h
 
 [palyground](https://play.golang.org/p/z9RLR5s6mTG)
 
-## Gosched
-
-Gosched yields the processor, allowing other goroutines to run. It does not suspend the current goroutine, so execution resumes automatically.
-```
-runtime.Gosched() // switch between go routine
-```
 
 ## Mutex
 
@@ -161,3 +133,25 @@ Blocking variable from other go routine access when a goroutine use it
 
 One of ways avoid `race condition`
 Package atomic provides low-level atomic memory primitives useful for implementing synchronization algorithms.
+
+
+## Additional
+
+#### func init() {}
+It will setup something before run main()
+
+#### Gosched
+
+Gosched yields the processor, allowing other goroutines to run. It does not suspend the current goroutine, so execution resumes automatically.
+```
+runtime.Gosched() // switch between go routine
+```
+
+#### runtime package
+```
+	fmt.Println("OS\t\t", runtime.GOOS)
+	fmt.Println("ARCH\t\t", runtime.GOARCH)
+	fmt.Println("CPUs\t\t", runtime.NumCPU())
+	fmt.Println("Goroutines\t\t", runtime.NumGoroutine())
+```
+
