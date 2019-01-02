@@ -28,3 +28,10 @@ William say try to be away from buffered channel as we want to have well built c
 ## Channel as a type [#]()
 
 ## Concurrency [#](https://golang.org/doc/effective_go.html#concurrency)
+
+## Fan in & Fan out
+07.fan-in is good design pattern
+- Todd’s code
+  https://play.golang.org/p/_CyyXQBCHe 
+- Rob Pike’s code
+  https://play.golang.org/p/buy30qw5MM 
