@@ -35,3 +35,13 @@ William say try to be away from buffered channel as we want to have well built c
   https://play.golang.org/p/_CyyXQBCHe 
 - Rob Pike’s code
   https://play.golang.org/p/buy30qw5MM 
+
+- fan out in [#](https://play.golang.org/p/iU7Oee2nm7)
+  Each go routine of 10 go routine will print. So when we change sleep time to 1 sec, This code will print 10 values at each seconds
+- throttle throughput [#](https://play.golang.org/p/RzR3Kjrx7q)
+  This one open go routines as much as values in channel, so when we change sleep time to 1 sec, This code will print all values after 1 sec
+
+## Context
+- https://blog.golang.org/context 
+- https://medium.com/@matryer/context-has-arrived-per-request-state-in-go-1-7-4d095be83bd8 
+- https://peter.bourgon.org/blog/2016/07/11/context.html 
