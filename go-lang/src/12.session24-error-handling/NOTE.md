@@ -22,6 +22,7 @@ Error is type in go[#](https://godoc.org/builtin#error). Error interface determi
 ## How to Printing & logging
 message
 - fmt.Println()
+  Fatalln is equivalent to Println() followed by a call to os.Exit(1).
 - log.Println()
 - log.Fatalln()
  - os.Exit()
