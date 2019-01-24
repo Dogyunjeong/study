@@ -30,9 +30,9 @@ func main() {
   bar()
   wg.Wait()
 }
-func foo() { 
+func foo() {
   ...
-  wg.Done()  
+  wg.Done()
 }
 func bar() { ... }
 ```
