@@ -1,6 +1,9 @@
 package dog
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestYears(t *testing.T) {
 	y := Years(7)
@@ -15,6 +18,28 @@ func TestYearsTwo(t *testing.T) {
 	}
 }
 
-fuc BenchmarkYears(t *testing.B) {
-	
+func BenchmarkYears(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Years(7 + i)
+	}
+}
+
+func BenchmarkYearsTwo(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		YearsTwo(7)
+	}
+}
+
+func ExampleYears() {
+	y := Years(7)
+	fmt.Println(y)
+	// Output:
+	// 49
+}
+
+func ExampleYearsTwo() {
+	y := YearsTwo(6)
+	fmt.Println(y)
+	// Output:
+	// 42
 }
