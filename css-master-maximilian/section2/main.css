@@ -1,0 +1,45 @@
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#product-overview {
+    background: #ff1b68;
+}
+
+.section-title {
+    color: #2ddf5c;
+    /* Inherit style from parent */
+    /* font-family: inherit;   */
+}
+
+/* doesn't have to be direct child */
+/* descendent combinator */
+#product-overview h1 {
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+/* Adjacent sibiling */
+/* if P is below h2, this style will be applied */
+h2 + p {
+    color: red;
+}
+
+/* General Sibling */
+/* All p tag with in same level of h2 will be applied */
+h2 ~ p {
+    color: red;
+}
+
+/* Chile combinator */
+/* Direct child p of div will be applied */
+div > p {
+    color: red;
+}
+
+
+
+/* h1 {
+    font-family: serif;
+} */
