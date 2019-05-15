@@ -32,6 +32,41 @@ HandleFunc registers the handler function for the given pattern.
   It has to match exact path
 
 
+## How to make middleware [#](https://medium.com/@chrisgregory_83433/chaining-middleware-in-go-918cfbc5644d)
+```
+package main
+import (
+    "fmt"
+    "net/http"
+)
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello Index!")
+}
+func main() {
+    http.HandleFunc("/", LogMiddleware(IndexHandler))
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+## Pre hook or post hook[#](https://github.com/JoergReinhardt/gorilla/issues/2)
+```
+var router *mux.Router
+
+func httpInterceptor(w http.RequestWriter, req *http.Request) {
+    // do some stuff before... check redis, etc
+    router.ServeHTTP(w, req)
+    // do some stuff after... put things in to redis, etc
+}
+
+func main() {
+    // set up your desired things on router here...
+
+    http.HandleFunc("/", httpInterceptor)
+}
+
+you could even intercept the writes to the ResponseWriter by passing mux's 
+ServeHTTP your own type that implements the ResponseWriter interface.
+```
 
 ## Synonymous Terms
 All interchangeable
