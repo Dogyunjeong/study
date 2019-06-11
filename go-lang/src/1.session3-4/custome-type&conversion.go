@@ -21,7 +21,7 @@ func main() {
 	// a = b
 
 	// Conversion
-	// int(b) will convert hotdog b to int
+	// int(b) will convert hotdog b to int. In other language it is called as casting
 	a = int(b)
 	fmt.Println(a)
 	fmt.Printf("%T\n", a)
