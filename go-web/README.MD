@@ -1,3 +1,6 @@
+## Folder structure and router
+- ref [#](https://itnext.io/structuring-a-production-grade-rest-api-in-golang-c0229b3feedc)
+
 
 ## Course resource [#](https://drive.google.com/drive/folders/0B22KXlqHz6ZNUnZ3Umw2YkFFVms)
 
