@@ -1,0 +1,7 @@
+{
+  "presets": [
+    ["env", { "modules": false }],
+    // stage-2 is for spratter
+    ["stage-2"]
+  ]
+}
