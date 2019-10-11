@@ -1,0 +1,53 @@
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+	<!-- for iterate -->
+	<ul>
+		<li v-for="ingredient in ingredients">{{ ingredient }}</li>
+	</ul>
+
+	<!-- for iterate
+	i is for index -->
+	<ul>
+		<li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+	</ul>
+	<!-- 1. vue conviniently proxys push method here
+		 2. v-for just keep the position not the element itself. So if you push something is second position it will change value.
+		 If want to keep the element itself, Can add :key="ingredient", it is tricky method
+	 -->
+	<button @click="ingredients.push('spices')">Add New</button>
+	<hr>
+	<!-- iterate for object -->
+	<ul>
+		<li v-for="person in persons">
+			{{ person.name }}
+			<!-- value is each value of property of the object -->
+			<span v-for="value in person">{{ value }}</span>
+			<hr>
+			<div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</span>
+		</li>
+	</ul>
+	<!-- iterate number -->
+	<hr>
+	<span v-for="n in 10">{{ n }}</span>
+	<hr>
+	<!-- Iterate with template which is for other elements-->
+	<template v-for="(ingredient, index) in ingredients">
+		<h1>{{ ingredient }}</h1>
+		<p>{{ index }}</p>
+	</template>
+</div>
+	
+<script>
+	new Vue({
+		el: '#app',
+		data: {
+			ingredients: ['meat', 'fruit', 'cookies'],
+			persons: [
+				{ name: 'Max', age: 27, color: 'red' },
+				{ name: 'Anna', age: 'unknown', color: 'blue' }
+			]
+		}
+	})
+</script>

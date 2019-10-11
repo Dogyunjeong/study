@@ -1,0 +1,48 @@
+<script src="./vue.js"></script>
+<div id="app">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter--">Increase Second</button>
+    <p>Counter: {{ counter }}</p>
+    <p>Result: {{ result() }} | {{ ouput }}</p>
+    <!-- Everything stored in computed can be used as data -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        // data is not reactivity
+        data: {
+            counter: 0,
+            secondCounter: 0
+        },
+        // To avoid rerender all that time when data is changed
+        // It is only related with the stored data in its method changing time
+        // It is more optimized. basically use this.
+        // It will work synchronously.
+        computed: {
+            output: function() {
+                console.log('Computed')
+                return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
+            }
+        },
+        // It will work asynchronously
+        watch: {
+            // It will watch matched any preporties of vuew with properties of its
+            counter: function(value) {
+                var vm = this;
+                setTimeout(function() {
+                    vm.counter = 0;
+                }, 2000)
+            }
+        },
+        // methods are working when any data is changed.
+        // If you don't want to cache data and rerender all that time.
+        methods: {
+            result() {
+                console.log('Method')
+                return this.counter > 5 ? 'Greater 5' : 'Smaller than 5'
+            }
+        }
+    })
+</script>
