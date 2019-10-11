@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:input="changeTitle">
+
+        <!-- once render, it will not be updated -->
+        <h1 v-once>{{ title }}</h1>
+
+        <!-- We don't need to use curly braces. it is under control of vue as v-bind  -->
+        <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p> 
+
+        <!-- We can't use curly braces in html element, {{ link }} will not be changed by vue -->
+        <!-- <p>{{ sayHello() }} - <a href="{{ link }}"></a></p>  -->
+
+        <hr>
+        <!-- It will be text without rendering,
+        Vue behavior is consistant -->
+        <!-- <p>{{ finishedLink }}</p> -->
+
+        <!-- if you want render element. v-html tell vue render it. -->
+        <p v-html="finishedLink"></p>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Hello World',
+                link: 'http://google.com',
+                finishedLink: '<a href="http://google.com">Google</a>'
+            },
+            methods: {
+                changeTitle: function(event) {
+                    this.title = event.target.value
+                },
+                sayHello: function() {
+                    // bc proxy system.  with this, can access to data.
+                    // compare to template, its different
+                    this.title = 'Hello'
+                    return this.title; 
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

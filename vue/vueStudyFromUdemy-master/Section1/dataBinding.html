@@ -1,0 +1,17 @@
+<script src="./vue.js"></script>
+
+<div id="app">
+    <input type="text" v-model="name">
+    <p>{{ name }}</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'Max'
+        }
+    })
+</script>
+
+<!-- interpolation, v-bind, v-on, v-model -->
