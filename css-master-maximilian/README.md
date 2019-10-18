@@ -6,6 +6,9 @@ If we set width: 500px, Is it for content or include padding/margin/border?
 
 !! Block level element basically has `box-sizing: content-box` and doesn't inherit `box-sizing` from parent by browser default
 
+### Outline
+It is not included in box model. but working like border
+
 ## Display
 
 ### Display:inline-block
@@ -26,6 +29,8 @@ If we set width: 500px, Is it for content or include padding/margin/border?
 ### Display:inline-block
 - become inline element but still can set margin and padding like block element
 - **Inline-block** even care white space in editor. Broser consider there is white space which we can't measure. (So just remove bit more pixel)
+
+### float is good for align image next text
 
 ### Shorthand properties
 
