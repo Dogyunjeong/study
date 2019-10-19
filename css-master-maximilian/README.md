@@ -24,6 +24,7 @@ It is not included in box model. but working like border
 ### Inline element
 
 - width will be content width
+- so set width doesn't effect
 - cann't set marin, padding for up and bottom
 
 ### Display:inline-block
@@ -76,6 +77,32 @@ instead of
 |Allow you to "mark" and name things for styling purposes only|Also got non-CSS meaning (g.g on-page link)|
 |Most used selector type|Use if available anyways|
 
+## Positioning
+
+![](./assets/section6.png)
+
+### Positioning Elements
+
+- position: `static`, `absolute`, `relative`, `fixed` and `sticky`
+- positioning context:
+- inline or block element doesn't matter
+
+#### Relative position
+  It does get element out from not entire document flow but sibling level
+
+#### Sticky
+Working like relative and fixed as soon as we reach to the border
+
+### Z-index
+
+Affect to elements that has position proerty (not default position)
+
+### Stacking context
+
+If we have z index of parent and parent's sibling. The children z-index doesn't effect to its parent level.
+
+### Summary of Positioning
+![](../assets/positioning_summary.png)
 
 # Useful resources and links
 
