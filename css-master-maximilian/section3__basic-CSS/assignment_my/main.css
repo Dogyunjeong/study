@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-box {
+  display: none;
+  height: 300px;
+  width: 50%;
+  margin: 10px;
+  padding: 15px;
+  background: #ffff11;
+}
+
+.my-second-box {
+  display: inline-block;
+  height: 300px;
+  width: 40%;
+  margin: 10px;
+  padding: 15px;
+  background: #ffff11;
+}
+
+.my-second-box:hover {
+  background: greenyellow;
+}
