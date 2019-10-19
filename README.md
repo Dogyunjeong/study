@@ -5,7 +5,7 @@ This is my study repo since Dec, 2018. If you are interested on me as a develope
 ## Waht I have learnt
 
 ### Before creating this repo
- I have learn't node.js, mongoDB and mySQL. I am currently working as a full-stack developer. My Main language is JS/TS but I am familiar with Python and go as well.
+ I have learn't node.js, mongoDB, AWS, firebase and mySQL. I am currently working as a full-stack developer. My Main language is JS/TS but I am familiar with Python and go as well.
  I have developed Android app with Java at begging of my developing experience.
 
 ### Data structure with Python
