@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VueJS</title>
+    <link rel="stylesheet" href="">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Can listen any defalut even such as mouse on and etc with v-on -->
+        <!-- pass own argument. 
+            $event is protected name-->
+        <button v-on:click="increase(2, $event)">Click me</button>
+
+        <!-- Can write one line of js in template  -->
+        <button v-on:click="counter++">Click me 2</button>
+        <p>{{ counter }}</p>
+        <p>{{ counter * 2 }}</p>
+        <p>{{ counter * 2 > 10 ? 'greater than 10' : 'smaller than 10'}}</p>
+
+        <!-- create automatically and pass automatically -->
+        <p v-on:mousemove="updateCoordinates">
+            Coordinates: {{ x }} / {{ y }}
+            <!-- stopPropagation -->
+            - <span v-on:mousemove="dummy">DEAD SPOT</span>
+            <!-- modifier // defaultFunction stop.pro  -->
+            - <span v-on:mousemove.stop="">DEAD SPOT WITH MODIFIER</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMe">
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                counter: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                increase: function(step, event) {
+                    this.counter += step
+                },
+                // automatically event object passed
+                updateCoordinates: function(event) {
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                dummy: function(event) {
+                    event.stopPropagation();
+                },
+                alertMe: function() {
+                    alert('Alert!')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
