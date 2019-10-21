@@ -104,6 +104,40 @@ If we have z index of parent and parent's sibling. The children z-index doesn't 
 ### Summary of Positioning
 ![](../assets/positioning_summary.png)
 
+## Images
+
+To handle more about image, using background image is better. Downside is just document flow.
+
+### Backgorund images
+![](../assets/background-image.png)
+
+#### using multiple backgrounds
+for transparent background or gradient
+all considers as an image
+```css
+ background-image: url(), url(), linear-gradient(), url(), red;
+```
+- first will show up at top
+
+#### gradient
+```css
+background-imgae: linear-gradient();
+```
+
+
+### Filter [#](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+![](../assets/filter.png)
+
+### Image tag
+Default behavior is image tag will not care the container's size but image size
+
+- if container is (display: inline-block): relative height or width are working
+
+### Summary of Image and background
+![](../assets/summary_of_image.png)
+
+- can stack filters
+
 # Useful resources and links
 
 - CSS Box Model: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
@@ -114,7 +148,10 @@ If we have z index of parent and parent's sibling. The children z-index doesn't 
 - Dive deeper into Pseudo Elements: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
 - A discussion on "classes vs IDs": https://stackoverflow.com/questions/12889362/difference-between-id-and-class-in-css-and-when-to-use-it
 - When is using !important  okay? => https://css-tricks.com/when-using-important-is-the-right-choice/
-
+- The background  Property: https://developer.mozilla.org/en-US/docs/Web/CSS/background
+- Styling Images: https://www.w3schools.com/css/css3_images.asp
+- Filters: https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+- Styling SVG: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS
 
 Document flow
 Dom
