@@ -31,10 +31,11 @@ CSS is basic and I've learnt ver beginning of my web developing studying. But It
 
 ## Next goal
 
-### Flutter / React Native
-### Graphql
-### Docker& Kubernates
-### Classification in ML
+#### Docker& Kubernates
+#### SVG
+#### Flutter / React Native
+#### Graphql
+#### Classification in ML
 
 
 
