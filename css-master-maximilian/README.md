@@ -53,11 +53,11 @@ instead of
 ```
 
 ## Margin collapsing [#](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/learn/lecture/9464964#overview)
-![](./assets/margin-collapsing.png)
+![]./assets/margin-collapsing.png)
 
 
 ## Pseudo class and property[#](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-![](./assets/pseudo_class_and_property.png)
+![]./assets/pseudo_class_and_property.png)
 
 ## Syntax
 
@@ -79,7 +79,7 @@ instead of
 
 ## Positioning
 
-![](./assets/section6.png)
+![]./assets/section6.png)
 
 ### Positioning Elements
 
@@ -102,14 +102,14 @@ Affect to elements that has position proerty (not default position)
 If we have z index of parent and parent's sibling. The children z-index doesn't effect to its parent level.
 
 ### Summary of Positioning
-![](../assets/positioning_summary.png)
+![](./assets/positioning_summary.png)
 
 ## Images
 
 To handle more about image, using background image is better. Downside is just document flow.
 
 ### Backgorund images
-![](../assets/background-image.png)
+![](./assets/background-image.png)
 
 #### using multiple backgrounds
 for transparent background or gradient
@@ -126,7 +126,7 @@ background-imgae: linear-gradient();
 
 
 ### Filter [#](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
-![](../assets/filter.png)
+![](./assets/filter.png)
 
 ### Image tag
 Default behavior is image tag will not care the container's size but image size
@@ -134,9 +134,31 @@ Default behavior is image tag will not care the container's size but image size
 - if container is (display: inline-block): relative height or width are working
 
 ### Summary of Image and background
-![](../assets/summary_of_image.png)
+![](./assets/summary_of_image.png)
 
 - can stack filters
+
+## Units
+- related to view port: `vh`, `vmin`, `vmax`, `vw`
+- rational with font: `rem`, `em`
+- rational: `%`
+- fixed: `px`
+
+![](./assets/unit_guideline.png)
+
+### Relations of display property
+
+![](./assets/unit_rule.png)
+
+### Summary
+
+![](./assets/unit_summary.png)
+
+
+# Align
+
+- center: `margin: auto`
+
 
 # Useful resources and links
 
@@ -152,6 +174,9 @@ Default behavior is image tag will not care the container's size but image size
 - Styling Images: https://www.w3schools.com/css/css3_images.asp
 - Filters: https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 - Styling SVG: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS
+- classList : https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
+
+# Words
 Document flow
 Dom
