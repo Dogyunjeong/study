@@ -57,7 +57,7 @@ instead of
 
 
 ## Pseudo class and property[#](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-![]./assets/pseudo_class_and_property.png)
+![](./assets/pseudo_class_and_property.png)
 
 ## Syntax
 
@@ -77,9 +77,12 @@ instead of
 |Allow you to "mark" and name things for styling purposes only|Also got non-CSS meaning (g.g on-page link)|
 |Most used selector type|Use if available anyways|
 
+### Attribute selector
+![](./assets/attribute-selectors.png)
+
 ## Positioning
 
-![]./assets/section6.png)
+![](./assets/section6.png)
 
 ### Positioning Elements
 
@@ -178,6 +181,16 @@ Default behavior is image tag will not care the container's size but image size
 ### Summary
 ![](./assets/responsive_summary.png)
 
+# Styling forms
+
+### outline
+
+outline is comaptitible to padding. but it is applied after padding and boxshadow, so it doens't affect to them.
+
+### summary
+
+![](./assets/form-styling-summary.png)
+
 # Useful resources and links
 
 - CSS Box Model: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
@@ -193,7 +206,10 @@ Default behavior is image tag will not care the container's size but image size
 - Filters: https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 - Styling SVG: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS
 - classList : https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-
+- More about device sizes: https://bjango.com/articles/min-device-pixel-ratio/
+- Media queries theory: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries
+- Styling Form Elements: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Styling_HTML_forms
+- Styling a `<select>`  Element: https://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript
 
 # Words
 Document flow
