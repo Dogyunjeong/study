@@ -168,6 +168,16 @@ Default behavior is image tag will not care the container's size but image size
 <meta name="viewport" content="width=device-width, initial-scale=1.5 user-scalable, maximum-scale, maximum-scale=1.5">
 ```
 
+### Media query
+```css
+
+@media (min-width: 40rem) and (orientation: landscape) {}
+@media (min-width: 40rem), (orientation: portrait) {}
+```
+
+### Summary
+![](./assets/responsive_summary.png)
+
 # Useful resources and links
 
 - CSS Box Model: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
