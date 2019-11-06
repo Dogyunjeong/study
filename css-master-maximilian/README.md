@@ -159,6 +159,14 @@ Default behavior is image tag will not care the container's size but image size
 
 - center: `margin: auto`
 
+# Responsive
+![](./assets/responsive_tool.png)
+
+### Vieport meta tag
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.5 user-scalable, maximum-scale, maximum-scale=1.5">
+```
 
 # Useful resources and links
 
