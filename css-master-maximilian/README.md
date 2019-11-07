@@ -191,6 +191,133 @@ outline is comaptitible to padding. but it is applied after padding and boxshado
 
 ![](./assets/form-styling-summary.png)
 
+
+# Text and fonts
+
+## System fonts
+
+There is system font for like 'menu' and etc
+
+## Custom styling
+
+### font short hand[#](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+
+Some values are infront of font size and font-family which is must required
+
+```css
+  font: italic small-caps 700 1.2rem/2 "AnonymousPro", sans-serif
+  /*font: font-style font-variant font-weight font-size(must)/line-height  font-family(must) */
+```
+
+### Generic families and font families
+
+![](./assets/generic-and-font-families.png)
+
+### What will be displayed
+
+![](./assets/text-displaying-mechanism.png)
+
+### Properties
+
+```css
+ font-family: "Montserrat", "Verdana", sans-serif;
+```
+
+It uses a fallback system. First apply Montserrat, if there is no Montserrat, apply verdana, if there is no Verdana go to sans-serif (generic family)
+
+### Font face
+
+It will define default weight or effects. check in google fonts
+
+- We need to import each font face, if want to use
+
+### Importing custom fonts
+
+```css
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("AnonymousPro-Bold.ttf") format("truetype"),
+         url("AnonymousPro-Bold.ttf") format("woff"),
+         url("AnonymousPro-Bold.ttf") format("woff2");
+    font-weight: 700;
+}
+```
+
+### Other properties for fonts
+
+```css
+  font-variant: small-caps;
+  font-stretch: ultra-condensed;
+```
+
+- check browser competititvity with can i use dot com
+
+#### text decoration
+
+```css
+  text-decoration: underline;
+  text-decoration: overline wavy;
+  text-decoration: line-through dotted red;
+  text-decoration: none;
+```
+
+#### text shadow
+
+It will makes a shadow behind of text as like as box shadow
+
+```css
+  text-shadow: 2px 2px 7px rgb(160, 153, 153);
+```
+
+#### Letter spacing
+
+Increase space between letter
+
+```css
+  letter-spacing: 5px;
+```
+
+#### White space
+
+Line brake place
+
+```css
+  white-space: nowrap;
+  white-space: pre-wrap;
+```
+
+#### Line height
+
+Line height is x times of font-size. So It is depend on used font-family size.
+
+```css
+line-height: 2;  /* recommended */
+line-height: 32px;
+line-height: 200%;  /* Can lead unexpected result in inherited font */
+```
+
+#### font-display
+
+It is not good browser supported
+```css
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+```
+
+- block-period is the time before custom styling added. There will be taken space for texts
+- swap-period is applying the custom styles in fallback systems
+
+
+![](assets/font-display.png)
+
+### Summary
+
+![](assets/text-and-font-summary.png)
+
+
 # Useful resources and links
 
 - CSS Box Model: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
@@ -210,6 +337,8 @@ outline is comaptitible to padding. but it is applied after padding and boxshado
 - Media queries theory: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries
 - Styling Form Elements: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Styling_HTML_forms
 - Styling a `<select>`  Element: https://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript
+- Web Safe Fonts: https://www.cssfontstack.com/
+- Google Fonts: https://fonts.google.com/
 
 # Words
 Document flow
