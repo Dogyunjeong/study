@@ -1,3 +1,9 @@
+# CSS master course
+
+This is from Academind udemy course.
+
+!! NOTE: There are bunch of comments which are used through course. I keep it for reference.!!
+
 ### Box model
 If we set width: 500px, Is it for content or include padding/margin/border?
 `box-sizing` property allow to set it
@@ -315,7 +321,51 @@ It is not good browser supported
 
 ### Summary
 
-![](assets/text-and-font-summary.png)
+![text and font summary](assets/text-and-font-summary.png)
+
+
+# Flex box
+
+It is better way to make modern responsive web.
+
+- It changes a way to display elements
+
+## Flex container and flex items
+- flex container is the element that we applyed `display: flex`
+- flex items are children elements of the container
+
+## Understanding flex box
+
+![understanding flexbox](./assets/understanding-flexbox.png)
+
+### Understanding main axis vs. cross axis
+
+![understading main and cross axis](assets/main-axis-and-cross-axis.png)
+
+
+### Align items and justify content
+
+![align items and justify content](assets/flex-align-items-and-justify-content.png)
+
+#### align-items
+
+Align items along cross axis
+
+- baseline value align items with the content's baseline not align along flex items
+
+#### justify-content
+
+Align items align main axis
+
+### align content
+
+When the second line of flex items are available, it effects immediately
+
+### Flexbox and the Z-Index
+
+In the position module we learned that adding the z-index  to an element only has an effect, if the position  property with a value different from static  was applied to this element.
+
+One exception from this behaviour is flexbox: Applying the z-index  to flex-items (so the elements inside of the flex-container) will change the order of these items even if no position  property was applied.
 
 
 # Useful resources and links
