@@ -361,12 +361,238 @@ Align items align main axis
 
 When the second line of flex items are available, it effects immediately
 
+- The align-content property modifies the behavior of the flex-wrap property. It is similar to align-items, but instead of aligning flex items, it aligns flex lines.
+
 ### Flexbox and the Z-Index
 
 In the position module we learned that adding the z-index  to an element only has an effect, if the position  property with a value different from static  was applied to this element.
 
 One exception from this behaviour is flexbox: Applying the z-index  to flex-items (so the elements inside of the flex-container) will change the order of these items even if no position  property was applied.
 
+### Flex item
+
+#### Order
+
+Flex items are aligned according to `order` value
+
+#### align-self
+
+Align Items when flex container `flex-wrap: nowrap`. It will align items in cross axis
+
+#### flex-grow
+
+It will increase flex item according to flex grow value out of rest of space
+
+- default is 0
+
+
+#### flex-shrink
+
+It allow to flex item decrease as much as the flex-shrink value out of lack of space
+
+- default is 1:
+- if flex-shrink value is 0. Flex item will not be decrease below its width
+
+#### flex-basis
+
+The size of element depending on the main axis
+
+- default is auto: It will use its own width or height depend on main axis
+- can apply % value as well.
+
+#### shot-hand flex
+
+```css
+.flex-item {
+  flex: 0 1 auto;
+  /* flex-grow  flex-shrink flex-basis*/
+}
+```
+
+### summary
+
+![](./assets/flex-summary.png)
+
+# CSS Grid
+
+## What's the "CSS Grid"?
+
+![](./assets/css-grid.png)
+
+## Defining rows and columns
+
+### Defining columns
+
+```css
+.grid {
+  display: grid;
+  /* grid-template-columns: 200px 150px 20%; 1fr */
+  grid-template-columns: repeat(4, 25%)
+  /* four columns with different size */
+}
+```
+
+#### fr: Fraction
+
+It will split rest of space into sum of `fr` values
+
+
+### Defining rows
+
+```css
+.grind {
+  display: grid;
+  /* grid-template-rows: 5rem auto; */
+  grid-template-rows: 5rem minmax(10px, 200px) auto;
+}
+```
+
+#### can assign name
+```css
+  grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, 200px) [row-2-end row-3-start] auto [row-3-end];
+```
+
+- can assign two names with white space
+
+#### auto
+
+Will fill the rest of space if container has `height` otherwise, wrap the content size
+
+#### minmax
+
+Can configure min and max size with `minmax` css function
+
+## Set element in grid
+
+### Defining start and end of column and row
+
+```scss
+.grid {
+  display: grid;
+  // more about grid column and rows
+  .gridItem {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    // grid-column-end: span 2;
+    // It will span 2 column from start
+    // grid-column-end: -1;
+    // grid-column: 3 / 5;
+    // - sign start from right -1 is rightest line
+    grid-row-start: 1;
+    grid-row-end: 3;
+    // grid-row: 1 / 3;
+  }
+}
+```
+
+### Element can overlap
+
+Browser try to avoid it.
+But if it is explicitly set, it will be overlap
+Probably need to handle with `z-index`
+
+### Short hand
+
+```css
+.grid-item {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+```
+
+#### Grid-area
+
+```css
+.grid-item {
+  grid-area: row-1-start / 2 / row-2-end / span 3;
+  /* row start / col start / row end / col end */
+}
+```
+
+### Grid gap
+
+```css
+.grid-container {
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-gap: 20px 10px;
+  /* row gap  col gap */
+}
+```
+
+### Grid Area
+
+```css
+.grid-container {
+  /* There are 3 row and 4 cells */
+  grid-template-areas: "header header header header"
+                    "side side main main"
+                    ". footer footer .";
+}
+
+.grid-item  {
+  grid-area: header;
+}
+
+```
+
+- `.` leave the cell
+
+### auto generate name
+
+`hd-start` and `hd-end` has patter and It will auto generate area `hd`
+
+```css
+.grid-container {
+    grid-template-columns: [hd-start] repeat(4, [col-start] 25% [col-end]) [hd-end];
+    grid-template-rows: [hd-start] 5rem [hd-end row-2-start] minmax(10px, 200px) [row-2-end row-3-start] auto [row-3-end];
+}
+.grid-ite {
+  grid-area: hd
+}
+```
+
+### grid function
+
+#### fit-content
+
+Will be automatically increasing to wrap the content. but It will not be smaller the `8rem`
+
+```css
+.grid-container {
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+}
+```
+
+### Grid-auto-rows && grid-auto-column
+
+```css
+.grid-container {
+    /* grid-auto-rows: 12rem; */
+    /* default is max is auto */
+    grid-auto-rows: minmax(8rem, auto);
+    /* grid-auto-flow: row; */
+    grid-auto-flow: row dense;
+    grid-auto-columns: 5rem;
+}
+```
+
+- dense will ful fill the space without caring html order
+- grid-auto-rows: grid rows will have the height set;
+
+## Grid Vs Flex box
+
+![](./assets/grid-vs-flexbox.png)
+
+Flex box is more for one dimension, there are main axis and cross axis. but handling cross axis is way difficult especially to achieve grid layout.
+  Grid is great to handle multi dimension layout. But If it is list or one dimension focused, flexbox is way better
+
+- One dimension: Flex box is good
+- Two dimension: consider grid
+
+## Grid Summary
+
+![](./assets/grid-summary.png)
 
 # Useful resources and links
 
@@ -389,6 +615,11 @@ One exception from this behaviour is flexbox: Applying the z-index  to flex-item
 - Styling a `<select>`  Element: https://stackoverflow.com/questions/1895476/how-to-style-a-select-dropdown-with-css-only-without-javascript
 - Web Safe Fonts: https://www.cssfontstack.com/
 - Google Fonts: https://fonts.google.com/
+- The theory behind flexbox: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+- The flex container: https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container
+
+- A really great article series on the CSS Grid: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+- A complete guide to CSS Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 
 # Words
 Document flow
