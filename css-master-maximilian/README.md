@@ -594,6 +594,224 @@ Flex box is more for one dimension, there are main axis and cross axis. but hand
 
 ![](./assets/grid-summary.png)
 
+# Transform
+
+## 2D transform
+
+### transform and translate
+
+```css
+{
+  transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+  /* rotating degrees from axis  |  Move to x | move to y*/
+  transform: rotate(45deg) translate(3.5rem, -1rem);
+  /* shot hand */
+  transform-origin: center;
+  /* rotating axis position */
+}
+```
+
+### skew and scale
+- Skew makes container's conner stretch
+- scale make element to become times with the value
+```css
+{
+   transform: skewX(0) skewY(30deg) scale(1.4);
+   /* skew(0, 30deg) */
+}
+```
+
+## 3D rotating
+
+### Perspective
+Perspective tilting the z axis
+
+```css
+.container {
+  perspective: 1000px;
+  perspective-origin: 100px;
+  transform: rotateY(45deg);
+  /* transform-style: flat; */
+  /* default  it doesn't care children 3d rotating*/
+  transform-style: preserve-3d;
+  /* 3D rotated children preserved */
+}
+/* both perspective equivalent */
+.item {
+  transform: perspective(1000px) rotateX(100deg) rotateY(30deg);
+  backface-visibility: hidden;
+  /* If it goes over to show back face, doesn't show */
+}
+```
+
+## Summary
+
+![](./assets/trasform-summary.png)
+
+- CSS Transforms: https://developer.mozilla.org/en-US/docs/Web/CSS/
+- CSS_Transforms/Using_CSS_transforms
+3D Transforms: https://desandro.github.io/3dtransforms/
+
+# Transitions
+
+It defines how element should animate
+
+!! changing display doesn't trigger transition
+#### changing display doesn't trigger transition
+
+## transition[#](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/learn/lecture/9672242#overview)
+
+  Transition define how to change from a element to a element.
+  In this example, it show how transforming
+
+```css
+.start {
+  transform: translateY(-3rem);
+  transition: opacity 200ms ease-out 1s, transform 500ms ease-out;
+  /*  property to watch |  animating time | control animating time. ease out will finish slowly  |  animation starting time in */
+}
+/* transition can be at any place */
+.end {
+    transform: translateY(0) !important;
+}
+```
+
+### Timing function
+
+- using Easing function site
+- create with chrome developer tools
+
+## Animation[#](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/learn/lecture/9672258#overview)
+
+Need a set keyframe
+
+```css
+.main-nav__item--cta {
+  /* animation: wiggle 200ms 3s 8 forwards; */
+  /* forwards say set as to state */
+  animation: wiggle 200ms 3s 8 alternate none;
+  /* animation: wiggle 200ms 1s ease-out 8 alternate forwards running; */
+  /* animation: NAME DURATION DELAY TIMING-FUNCTION ITERATION DIRECTION FILL-MODE PLAY-STATE;  */
+}
+```
+
+### key frame
+
+Defining animation
+
+```css
+@keyframes wiggle {
+  from {
+    transform: rotateZ(0)
+  }
+  to {
+    transform: rotateZ(10deg)
+  }
+}
+
+@keyframes wigglePer {
+  0% {
+    transform: rotateZ(0)
+  }
+  50% {
+    transform: rotateZ(-10deg)
+  }
+  100% {
+    transform: rotateZ(10deg)
+  }
+}
+
+/* multiple value is possible*/
+/* Should think it defines a look of an element at that time */
+@keyframes flip-customer {
+  0% {
+    transform: rotateY(0) skew(20deg);
+  }
+  50% {
+    transform: rotateY(160deg) skew(20deg);
+  }
+  100% {
+    transform: rotateY(360deg) skew(20deg);
+  }
+}
+```
+
+### JS Event listener for animation
+
+```js
+ctaButton.addEventListener('animationstart', function (event) {
+  console.log('Animation started', event)
+})
+
+ctaButton.addEventListener('animationend', function (event) {
+  console.log('Animation ended', event)
+})
+
+
+ctaButton.addEventListener('animationiteration', function (event) {
+  console.log('Animation iteration', event)
+})
+```
+
+## Summary[#](https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/learn/lecture/9669662#overview)
+
+
+![](/assets/animation-summary.png)
+
+- CSS Transitions: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+- CSS Animations: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+- List of "transitionable" Properties: https://www.w3.org/TR/css-transitions-1/#animatable-properties
+
+
+# Future proof css code
+
+## Variables
+
+![](.aseets/css-variables.png)
+
+## Vendor prefixes
+
+Way to implement upcoming feature
+
+## Support Queries
+
+```css
+/* if can use `display: grid` it will work */
+@supports (display: grid) {
+  .container {
+    display: grid;
+  }
+}
+
+@supports (display: grid) and not{
+@supports (display: grid) and {
+@supports (display: grid) or {
+```
+
+## Polyfills
+
+A polyfill is a javascript package which enables certain CSS Features in Browsers which would not support it otherwise
+
+- It costs a lot
+
+## Eliminate corss-browser inconsistencies
+
+Can use reset-library to keep consistencies.
+
+- Browsers use different defaults
+  - margins, paddings, box-sizing
+
+## Choosing class names correctly
+
+![](./assets/choosiing-right-class-names.png)
+
+![](./assets/block-elemnt-modifier--BEM.png)
+
+## Summary
+
+![](./assets/future-proof-summary.png)
+
+
 # Useful resources and links
 
 - CSS Box Model: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
