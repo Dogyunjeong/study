@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Box model</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 id="Box-model">Box model</h3>
+<p>If we set width: 500px, Is it for content or include padding/margin/border?
+<code>box-sizing</code> property allow to set it</p>
+<ul>
+<li>content-box: only content is affected</li>
+<li>border-box: include content, padding and border</li>
+</ul>
+<p>!! Block level element basically has <code>box-sizing: content-box</code> and doesn't inherit <code>box-sizing</code> from parent by browser default</p>
+<h3 id="Outline">Outline</h3>
+<p>It is not included in box model. but working like border</p>
+<h2 id="Display">Display</h2>
+<h3 id="Displayinline-block">Display:inline-block</h3>
+<ul>
+<li>become inline element but still can set margin and padding like block element</li>
+</ul>
+<h2 id="Behavior-depend-on-element">Behavior depend on element</h2>
+<h3 id="Block-element">Block element</h3>
+<ul>
+<li>always take available width</li>
+<li>can set margin, padding</li>
+</ul>
+<h3 id="Inline-element">Inline element</h3>
+<ul>
+<li>width will be content width</li>
+<li>so set width doesn't effect</li>
+<li>cann't set marin, padding for up and bottom</li>
+</ul>
+<h3 id="Displayinline-block-1">Display:inline-block</h3>
+<ul>
+<li>become inline element but still can set margin and padding like block element</li>
+<li><strong>Inline-block</strong> even care white space in editor. Broser consider there is white space which we can't measure. (So just remove bit more pixel)</li>
+</ul>
+<h3 id="float-is-good-for-align-image-next-text">float is good for align image next text</h3>
+<h3 id="Shorthand-properties">Shorthand properties</h3>
+<p>Recommend it as it is lean. When want to override, can use long property to keep other set properties</p>
+<ul>
+<li>combine values of multiple properties in a single property</li>
+<li>order doesn't matter</li>
+</ul>
+<pre><code class="language-css"><div>  <span class="hljs-selector-tag">border</span>: 2<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">black</span> <span class="hljs-selector-tag">solid</span>;
+</div></code></pre>
+<p>instead of</p>
+<pre><code class="language-css"><div>  <span class="hljs-selector-tag">border-width</span>: 2<span class="hljs-selector-tag">px</span>;
+  <span class="hljs-selector-tag">border-style</span>: <span class="hljs-selector-tag">solid</span>;
+  <span class="hljs-selector-tag">border-color</span>: <span class="hljs-selector-tag">black</span>
+</div></code></pre>
+<h2 id="Margin-collapsing">Margin collapsing <a href="https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/learn/lecture/9464964#overview">#</a></h2>
+<p><img src="file:////home/dogyun/projects/study/css-master-maximilian/assets/margin-collapsing.png" alt=""></p>
+<h2 id="Pseudo-class-and-property">Pseudo class and property<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">#</a></h2>
+<p><img src="file:////home/dogyun/projects/study/css-master-maximilian/assets/pseudo_class_and_property.png" alt=""></p>
+<h2 id="Syntax">Syntax</h2>
+<ul>
+<li>grouping</li>
+</ul>
+<pre><code class="language-css"><div><span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>,
+<span class="hljs-selector-class">.main-nav__item</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span> {
+    <span class="hljs-attribute">color</span>: white;
+}
+</div></code></pre>
+<h2 id="Css-class-selectors-vs-ID-selector">Css class selectors vs ID selector</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">CSS class Selectors</th>
+<th style="text-align:center">CSS ID Selectors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Re-usable</td>
+<td style="text-align:center">Only used once per page</td>
+</tr>
+<tr>
+<td style="text-align:center">Allow you to &quot;mark&quot; and name things for styling purposes only</td>
+<td style="text-align:center">Also got non-CSS meaning (g.g on-page link)</td>
+</tr>
+<tr>
+<td style="text-align:center">Most used selector type</td>
+<td style="text-align:center">Use if available anyways</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Positioning">Positioning</h2>
+<p><img src="file:////home/dogyun/projects/study/css-master-maximilian/assets/section6.png" alt=""></p>
+<h3 id="Positioning-Elements">Positioning Elements</h3>
+<ul>
+<li>position: <code>static</code>, <code>absolute</code>, <code>relative</code>, <code>fixed</code> and <code>sticky</code></li>
+<li>positioning context:</li>
+<li>inline or block element doesn't matter</li>
+</ul>
+<h4 id="Relative-position">Relative position</h4>
+<p>It does get element out from not entire document flow but sibling level</p>
+<h4 id="Sticky">Sticky</h4>
+<p>Working like relative and fixed as soon as we reach to the border</p>
+<h3 id="Z-index">Z-index</h3>
+<p>Affect to elements that has position proerty (not default position)</p>
+<h3 id="Stacking-context">Stacking context</h3>
+<p>If we have z index of parent and parent's sibling. The children z-index doesn't effect to its parent level.</p>
+<h3 id="Summary-of-Positioning">Summary of Positioning</h3>
+<p><img src="file:////home/dogyun/projects/study/assets/positioning_summary.png" alt=""></p>
+<h2 id="Images">Images</h2>
+<p>To handle more about image, using background image is better. Downside is just document flow.</p>
+<h3 id="Backgorund-images">Backgorund images</h3>
+<p><img src="file:////home/dogyun/projects/study/assets/background-image.png" alt=""></p>
+<h4 id="using-multiple-backgrounds">using multiple backgrounds</h4>
+<p>for transparent background or gradient
+all considers as an image</p>
+<pre><code class="language-css"><div> <span class="hljs-selector-tag">background-image</span>: <span class="hljs-selector-tag">url</span>(), <span class="hljs-selector-tag">url</span>(), <span class="hljs-selector-tag">linear-gradient</span>(), <span class="hljs-selector-tag">url</span>(), <span class="hljs-selector-tag">red</span>;
+</div></code></pre>
+<ul>
+<li>first will show up at top</li>
+</ul>
+<h4 id="gradient">gradient</h4>
+<pre><code class="language-css"><div><span class="hljs-selector-tag">background-imgae</span>: <span class="hljs-selector-tag">linear-gradient</span>();
+</div></code></pre>
+<h3 id="Filter">Filter <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">#</a></h3>
+<p><img src="file:////home/dogyun/projects/study/assets/filter.png" alt=""></p>
+<h3 id="Image-tag">Image tag</h3>
+<p>Default behavior is image tag will not care the container's size but image size</p>
+<ul>
+<li>if container is (display: inline-block): relative height or width are working</li>
+</ul>
+<h3 id="Summary-of-Image-and-background">Summary of Image and background</h3>
+<p><img src="file:////home/dogyun/projects/study/assets/summary_of_image.png" alt=""></p>
+<ul>
+<li>can stack filters</li>
+</ul>
+<h1 id="Useful-resources-and-links">Useful resources and links</h1>
+<ul>
+<li>CSS Box Model: <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model">https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model</a></li>
+<li>box-sizing : <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing</a></li>
+<li>More on height &amp; width: <a href="https://www.w3schools.com/css/css_dimension.asp">https://www.w3schools.com/css/css_dimension.asp</a></li>
+<li>The display  Property: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">https://developer.mozilla.org/en-US/docs/Web/CSS/display</a></li>
+<li>Pseudo Classes on the MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a></li>
+<li>Dive deeper into Pseudo Elements: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</a></li>
+<li>A discussion on &quot;classes vs IDs&quot;: <a href="https://stackoverflow.com/questions/12889362/difference-between-id-and-class-in-css-and-when-to-use-it">https://stackoverflow.com/questions/12889362/difference-between-id-and-class-in-css-and-when-to-use-it</a></li>
+<li>When is using !important  okay? =&gt; <a href="https://css-tricks.com/when-using-important-is-the-right-choice/">https://css-tricks.com/when-using-important-is-the-right-choice/</a></li>
+<li>The background  Property: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background">https://developer.mozilla.org/en-US/docs/Web/CSS/background</a></li>
+<li>Styling Images: <a href="https://www.w3schools.com/css/css3_images.asp">https://www.w3schools.com/css/css3_images.asp</a></li>
+<li>Filters: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter">https://developer.mozilla.org/en-US/docs/Web/CSS/filter</a></li>
+<li>Styling SVG: <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS">https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS</a></li>
+</ul>
+<p>Document flow
+Dom</p>
+
+    </body>
+    </html>
