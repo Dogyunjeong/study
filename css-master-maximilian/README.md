@@ -811,6 +811,123 @@ Can use reset-library to keep consistencies.
 
 ![](./assets/future-proof-summary.png)
 
+- CSS Modules & Working Groups: https://www.w3.org/TR/tr-groups-all#tr_Cascading_Style_Sheets__CSS__Working_Group
+- CSS Variables: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+- BEM in Detail: http://getbem.com/introduction/
+
+
+# SASS
+
+![](./assets/sass-features.png)
+
+## Nesting Rules
+
+## nesting properties
+
+```scss
+.any-elem {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex: {
+    direction: column;
+    wrap: nowrap;
+  }
+}
+```
+
+## variables
+
+```scss
+$main-color: #521751;
+// variable list
+$border-default: 0.05rem solid $main-color;
+
+// variable map
+$colors: (main: #521751, secondary: #fa923f);
+// how to get mapped value
+$border-default: 0.05rem solid map-get($colors, main);
+```
+
+## Builtin functions[#](https://sass-lang.com/documentation/modules)
+
+```scss
+.elem{
+  background: lighten(map-get($colors, main), 72%);
+}
+```
+
+## Inheritance
+
+```scss
+.sass-section {
+  border: $border-default;
+  background: lighten(map-get($colors, main), 72%);
+  padding: 2rem;
+  text-align: center;
+  width: 90%;
+  box-sizing: border-box;
+  @media (min-width: 40rem) {
+    width: 30rem;
+  }
+}
+
+.sass-introduction {
+  // sass-introduction will have all property of .sass-section
+  @extend .sass-section;
+  box-shadow: $size-tiny $size-tiny 0.1rem #ccc;
+}
+```
+
+## Mixin
+
+Own function
+
+```scss
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.container {
+  @include display-flex();
+  flex: {
+    direction: column;
+    wrap: nowrap;
+  }
+  align-items: center;
+  padding: 3rem 0;
+  box-sizing: border-box;
+  @media (min-width: 40rem) {
+    padding: 3rem 0;
+  }
+}
+
+// Width content and pass variable
+@mixin media-min-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+html {
+  font-size: 94.75%;
+  @include media-min-width(40rem) {
+    font-size: 125%;
+  }
+}
+
+```
+
+## Summary
+
+![](./assets/sass-summary.png)
+
+- Dive deeper into Sass: https://sass-lang.com/guide
+
+# Next Steps
+
 
 # Useful resources and links
 
