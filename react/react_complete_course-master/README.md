@@ -1,5 +1,8 @@
 # About
 
+This is a studying code for maximilians react complete course in Udemy.
+While re-constructuring git repositiory I lost completed code.
+
 # Section3
 scoped styling,
 dynamic styling,
