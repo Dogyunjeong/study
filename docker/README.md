@@ -45,3 +45,6 @@ $ docker build --tag whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
 - always: If this container stops "for any reason" always attempt to restart it
 - on-failure: only restart if the container stops with an error code
 - unless-stopped: always restart unless we (the developers) forcibly stop it
+
+## Development work flow
+**development** -> **testing** -> **deployment** -> **development** ...
