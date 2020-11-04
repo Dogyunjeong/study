@@ -48,3 +48,12 @@ $ docker build --tag whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
 
 ## Development work flow
 **development** -> **testing** -> **deployment** -> **development** ...
+
+
+### Use local files as a container volume
+
+#### using docker-compose configuration
+
+attaching volumes.
+
+####
