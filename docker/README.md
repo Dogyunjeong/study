@@ -56,4 +56,11 @@ $ docker build --tag whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
 
 attaching volumes.
 
-####
+## Docker Build
+
+- keyword: `base image`
+
+### Multi build process (Multi step docker file)
+
+can build react project and use buildt source code to serve with nginx.
+So there will be two step. build react project in first docker build and build nginx container with the built static file to serve
