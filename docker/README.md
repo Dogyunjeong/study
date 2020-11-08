@@ -64,3 +64,24 @@ attaching volumes.
 
 can build react project and use buildt source code to serve with nginx.
 So there will be two step. build react project in first docker build and build nginx container with the built static file to serve
+
+
+## Continuous Integration with travis CI and aws
+
+Once there is new pull request on master, travis ci will do jobs and dploy in AWS
+
+### Travis is CI tool
+
+Deploying is only happen when master branch is updated
+Test is happens when new pull request is created onto master.
+
+1. Connect travis and github repository
+2. setup `.trvis.yml` file
+    1. Set up environment
+    2. Add script to test
+3. Setup deploying
+    1. create aws elasticbeanstalk
+        - About the platform: `docker running on 64bit amazon linux` use `DockerFile` to build image and `linux2` use docker-compose. **be aware about this**
+    2. create IAM for travis ci in aws
+    3. added `ACCESS_KEY` and `SECRET_KEY` into travis ci environment variable
+    4. configure `.travis.yml` for `deploy`

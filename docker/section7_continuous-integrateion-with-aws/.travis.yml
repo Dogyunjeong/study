@@ -1,0 +1,24 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+before_install:
+  # This tag will only being used in the travis instance 
+  - docker build -t dogun098/docker-react -f Dockerfile.dev .
+
+# supposed to contain all command to excute
+script:
+  - docker run -e CI=true dogun098/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-295059670394"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
